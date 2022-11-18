@@ -1,0 +1,42 @@
+@use '../abstracts/helper'as *;
+
+.categories {
+
+   .heading {
+      margin-bottom: 5rem;
+      @extend .flexRow-between;
+   }
+
+   .categories-wrapper {
+      flex-wrap: wrap;
+      @extend .flexRow-between;
+   }
+
+
+   .category-item {
+      width: 33%;
+      padding: 4rem 0;
+      margin: 3rem 0;
+      text-align: center;
+      border-right: 0.1rem solid hsla(0, 0%, 50%, 0.205);
+
+      img {
+         transform: scale(1);
+         margin-bottom: 1rem;
+         transition: transform 0.9s ease-in-out;
+      }
+
+      h3 {
+         color: $color-Dark-800;
+         transition: color 0.3s ease-in-out;
+
+         &:hover {
+            color: $color-btn-primary;
+         }
+      }
+
+      &:hover img {
+         transform: scale(1.1);
+      }
+   }
+}

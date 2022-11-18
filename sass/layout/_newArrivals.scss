@@ -1,0 +1,224 @@
+@use '../abstracts/helper'as *;
+
+.newArrivals {
+   background-color: $color-footerBar;
+
+   .heading {
+      margin: 0 1rem 4rem 1rem;
+      @extend .flexRow-between;
+   }
+
+   .categories {
+      gap: 1.5rem;
+      @extend .flexRow-between;
+   }
+
+   .arrival-banners {
+      flex-basis: 30%;
+      transform: translateY(-20rem);
+   }
+
+   .arrival-products {
+      flex-basis: 70%;
+   }
+
+   .arrival-wrapper {
+      gap: 3rem;
+      @extend .flexRow-between;
+   }
+
+   .btn-white {
+      padding: 1.5rem 3.6rem;
+   }
+}
+
+.banner-watch {
+   margin-bottom: 2rem;
+   border-radius: 0.6rem;
+   background: $color-gradient2;
+
+   figure {
+      text-align: center;
+   }
+
+   .banner-heading {
+      padding: 3rem;
+      color: white;
+      @extend .flexRow-between;
+
+      p,
+      .heading-title {
+         font-size: $fs-heading;
+      }
+
+      .heading-price {
+         width: 14rem;
+         height: 14rem;
+         border-radius: 50%;
+         color: $color-Dark-800;
+         @extend .flexColumn-center;
+         background-color: white;
+
+         p {
+            font-weight: 600;
+         }
+      }
+   }
+
+   .btn-black {
+      margin: 0 0 3rem 3rem;
+   }
+
+   .line {
+      opacity: 0.3;
+      color: white;
+   }
+
+   .banner-footing {
+      color: white;
+      padding: 3rem;
+
+      .horz-line {
+         margin: 0 1rem 0 0;
+         background-color: white;
+      }
+
+      .footing-title {
+         display: flex;
+         margin-bottom: 3rem;
+         align-items: center;
+         justify-content: start;
+      }
+   }
+
+   .footing-timer {
+      gap: 3rem;
+      @extend .flexRow-center;
+
+      span {
+         width: 6rem;
+         height: 6rem;
+         position: relative;
+         border-radius: 5rem;
+         font-size: $fs-heading;
+         color: $color-Dark-400;
+         @extend .flexRow-center;
+         background-color: white;
+      }
+
+      p {
+         top: 0;
+         right: -25%;
+         color: white;
+         position: absolute;
+      }
+   }
+}
+
+.banner-game {
+   background-image: url('../../assets/arrivalBanner2.jpg');
+   background-size: cover;
+   background-repeat: no-repeat;
+   border-radius: 0.6rem;
+   padding: 3rem;
+   color: white;
+
+   span {
+      font-size: $fs-heading;
+   }
+
+   .horz-line {
+      margin-bottom: 1.5rem;
+      background-color: white;
+   }
+
+   p {
+      margin-bottom: 3rem;
+      font-size: $fs-subheading;
+   }
+}
+
+.products {
+   flex-wrap: wrap;
+   @extend .flexRow-between;
+
+   .product-item {
+      flex-basis: 32%;
+      overflow: hidden;
+      position: relative;
+      margin: 1.5rem 0.6rem;
+
+      figure {
+         padding: 2rem;
+         background-color: white;
+      }
+
+      img {
+         transform: scale(1.0);
+         transition: transform 0.8s ease-in-out;
+      }
+
+      .product-info {
+         margin: 1.5rem 0.4rem;
+
+         a {
+            font-size: $fs-h5;
+            color: $color-Dark-800;
+            transition: color 0.3s ease-in-out;
+
+            &:hover {
+               color: $color-btn-primary;
+            }
+         }
+
+         .product-price {
+            margin: 0.6rem 0;
+         }
+      }
+
+      &:hover {
+         img {
+            transform: scale(1.1);
+         }
+
+         .product-hover {
+            top: 5%;
+            right: 2%;
+            opacity: 1;
+            visibility: visible;
+         }
+      }
+   }
+
+   .product-hover {
+      position: absolute;
+      right: -16%;
+      top: 5%;
+      opacity: 0;
+      visibility: hidden;
+      transition: right 0.7s ease-in-out, opacity 0.7s ease-in-out, visibility 0.7s ease-in-out;
+
+      .product-heart,
+      .product-search,
+      .product-cart {
+         width: 5rem;
+         height: 5rem;
+         margin: 1rem;
+         border-radius: 50%;
+         @extend .flexRow-center;
+         background-color: white;
+         box-shadow: $box-shadow-md;
+
+
+
+         &:hover {
+            background-color: $color-btn-primary;
+
+            svg {
+               fill: white;
+            }
+         }
+      }
+   }
+
+}

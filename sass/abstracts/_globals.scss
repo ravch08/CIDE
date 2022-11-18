@@ -1,0 +1,131 @@
+@use "./variables"as v;
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  /* Inherits from body element */
+}
+
+html {
+  font-size: 62.5%;
+  /* Always use percentages. 1rem = 10px. */
+  scroll-behavior: smooth;
+  /* Prevent adjustments of font size after orientation changes in iO*/
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  font-size: 1.4rem;
+  color: v.$color-body;
+  overflow-x: hidden;
+  font-family: v.$fm-body;
+  box-sizing: border-box;
+  background-color: white;
+
+  &::-webkit-scrollbar {
+    width: 0.8rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: v.$color-scrollbar;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: v.$color-scrollThumb;
+  }
+}
+
+@supports (scrollbar-color: v.$color-scrollThumb v.$color-scrollbar) {
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: v.$color-scrollThumb v.$color-scrollbar;
+  }
+}
+
+// -- PROPERTY  --------------------------------------------------------------------
+
+h1,
+h2,
+h3,
+h4 {
+  line-height: v.$lh-heading;
+  font-family: v.$fm-primary;
+}
+
+input,
+button,
+select,
+textarea {
+  font: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+}
+
+ul:not(.browser-default)>li {
+  list-style: none;
+}
+
+a:not(.browser-default) {
+  text-decoration: none;
+}
+
+p {
+  font-size: v.$fs-body;
+}
+
+h1 {
+  margin: 1rem 0;
+  font-size: v.$fs-h1;
+}
+
+h2 {
+  font-weight: 600;
+  font-size: v.$fs-h2;
+}
+
+h3 {
+  font-weight: 400;
+  font-size: v.$fs-h3;
+}
+
+h4 {
+  font-size: v.$fs-h4;
+}
+
+figure {
+  line-height: 0;
+}
+
+img {
+  height: auto;
+  line-height: 0;
+  max-width: 100%;
+  border-style: none;
+}
+
+small {
+  font-size: 80%;
+}
+
+/* OPTIONAL -- remove animations for people who've turned them off */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+// width: calc(100% - 10px);
+// transform: translate(-15px, 0);

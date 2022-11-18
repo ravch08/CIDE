@@ -1,0 +1,64 @@
+@use '../abstracts/helper'as *;
+
+.testimonials {
+   background: $color-gradient3;
+
+   .heading {
+      text-align: center;
+      @extend .flexColumn-center;
+   }
+
+   .swiper-slide {
+      padding: 5rem 0;
+   }
+
+   .swiper-pagination-bullet-active-main {
+      width: 3rem;
+      border-radius: 1rem;
+      background-color: $color-btn-primary;
+   }
+
+   .testimonial-item {
+      padding: 2rem 2.5rem;
+      border-radius: 0.6rem;
+      background-color: white;
+      box-shadow: $box-shadow-sm;
+
+      svg {
+         fill: goldenrod
+      }
+
+      p {
+         margin: 1.6rem 0 3.6rem;
+      }
+   }
+
+   .author {
+      display: flex;
+      padding-top: 2rem;
+      position: relative;
+      align-items: center;
+
+      .author-info {
+         display: flex;
+         margin-left: 3rem;
+         flex-direction: column;
+      }
+
+      span {
+         color: black;
+         margin-bottom: 0.6rem;
+         letter-spacing: 0.2rem;
+      }
+   }
+
+   .down-arrow {
+      width: 1.5rem;
+      height: 1.5rem;
+      position: absolute;
+      top: 0;
+      left: 8%;
+      background-color: white;
+      clip-path: polygon(0 0, 50% 70%, 100% 0);
+   }
+}

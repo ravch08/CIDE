@@ -1,0 +1,114 @@
+@use '../abstracts/helper'as *;
+
+.btn {
+   display: block;
+   font-size: $fs-btn;
+   width: fit-content;
+   border-radius: 6rem;
+   padding: 1.4rem 4.5rem;
+}
+
+.btn-black {
+   display: block;
+   color: white;
+   font-size: 1.3rem;
+   width: fit-content;
+   border-radius: 6rem;
+   padding: 1.1rem 3.2rem;
+   background-color: $color-Dark-800;
+   transition: background-color .3s ease-in-out, color 0.2s ease-in-out;
+
+   svg {
+      fill: white;
+      transform: translate(0.8rem, 0.4rem);
+   }
+
+   &:hover {
+      color: black;
+      background-color: white;
+
+      svg {
+         fill: black;
+      }
+   }
+}
+
+.btn-white-sm {
+   display: block;
+   color: black;
+   font-size: 1.3rem;
+   width: fit-content;
+   border-radius: 6rem;
+   padding: 1.1rem 3.2rem;
+   background-color: white;
+   transition: background-color .3s ease-in-out, color 0.2s ease-in-out;
+
+   svg {
+      fill: black;
+      transition: fill 0.2s ease-in-out;
+      transform: translate(1rem, 0.3rem);
+   }
+
+   &:hover {
+      color: white;
+      background-color: $color-btn-primary;
+
+      svg {
+         fill: white;
+      }
+   }
+}
+
+.btn-gradient {
+   opacity: 1;
+   color: white;
+   background: $color-gradient1;
+   transition: opacity 0.3s ease-in-out;
+
+   &:hover {
+      opacity: 0.8;
+   }
+}
+
+.btn-red {
+   color: white;
+   background-color: $color-btn-primary;
+   transition: background-color .3s ease-in-out;
+
+   svg {
+      fill: white;
+      transform: translate(1rem, 0.3rem);
+   }
+
+   &:hover {
+      background-color: lighten($color-btn-primary, 8%);
+   }
+}
+
+.btn-white {
+   color: black;
+   background-color: white;
+   transition: background-color 0.3s ease-in-out, color 0.2s ease-in-out;
+
+   svg {
+      fill: black;
+      transform: translate(1rem, 0.3rem);
+   }
+
+   &:hover {
+      color: white;
+      background-color: $color-btn-primary;
+   }
+}
+
+.btn-submit {
+   border: white;
+   font-size: 1.4rem;
+   width: fit-content;
+   padding: 1.3rem 3rem;
+   background-color: $color-btn-primary;
+
+   svg {
+      fill: white;
+   }
+}

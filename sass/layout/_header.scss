@@ -1,0 +1,104 @@
+@use "../abstracts/helper"as *;
+
+header {
+   height: 8.5rem;
+   position: fixed;
+   top: 0;
+   left: 0;
+   z-index: 99;
+   width: 100%;
+   padding: 0 0 0 5%;
+   background-color: transparent;
+   border-bottom: 0.1rem solid hsla(0, 0%, 0%, 0.062);
+   transition: height 0.3s ease-in-out;
+
+   .header-wrapper,
+   .nav-list,
+   .account {
+      gap: 2rem;
+      @extend .flexRow-between;
+   }
+
+   .nav-item {
+      display: flex;
+   }
+
+   .nav-link {
+      padding: 3rem 1rem;
+      color: $color-Dark-800;
+      transition: color 0.2s ease-in-out;
+
+      &:hover {
+         color: $color-btn-primary;
+      }
+   }
+
+   &.sticky {
+      height: 9.5rem;
+      background-color: white;
+      box-shadow: $box-shadow-md;
+
+      .search {
+         height: 9.5rem;
+      }
+   }
+}
+
+
+.account {
+
+   .currency {
+      padding: 1rem;
+
+      select {
+         border: none;
+         cursor: pointer;
+         padding: 1rem 0;
+         background-color: transparent;
+      }
+   }
+
+   svg {
+      fill: $color-Dark-800;
+      transition: fill 0.3s ease-in-out;
+
+      &:hover {
+         fill: $color-btn-primary;
+      }
+   }
+
+   .cart {
+      position: relative;
+   }
+
+   .badge {
+      top: -45%;
+      right: -65%;
+      width: 2rem;
+      height: 2rem;
+      color: white;
+      font-size: 1rem;
+      border-radius: 50%;
+      position: absolute;
+      @extend .flexRow-center;
+      background-color: $color-btn-primary;
+   }
+
+   .search {
+      height: 8.5rem;
+      padding: 0 6rem;
+      margin-left: 2rem;
+      @extend .flexRow-between;
+      background-color: $color-btn-primary;
+      transition: background-color 0.3s ease-in-out, height 0.3s ease-in-out;
+
+      svg {
+         fill: white;
+         transform: translateY(-0.4rem);
+      }
+
+      &:hover {
+         background-color: lighten($color-btn-primary, 10%);
+      }
+   }
+}

@@ -1,0 +1,78 @@
+@use '../abstracts/helper'as *;
+
+.slider {
+   padding: 0;
+   height: 100vh;
+   overflow: hidden;
+   position: relative;
+   z-index: 0;
+
+   .swiper-slide {
+      width: 100%;
+      height: 100%;
+      line-height: 0;
+      position: relative;
+   }
+
+   .slider-img {
+      max-width: initial;
+   }
+
+   .slider-bg {
+      top: 20%;
+      right: 16%;
+      width: 22%;
+      position: absolute;
+   }
+
+   .slider-content {
+      top: 35%;
+      left: 16%;
+      position: absolute;
+      line-height: initial;
+
+      small {
+         font-weight: 400;
+         font-size: $fs-h3;
+         padding: 0 0.4rem;
+         color: $color-Dark-800;
+         letter-spacing: 0.4rem;
+      }
+
+      h1 {
+         font-weight: 600;
+         color: $color-Dark-800;
+      }
+
+      span {
+         font-size: $fs-subheading;
+      }
+
+      .btn-gradient {
+         margin-top: 4rem;
+      }
+   }
+}
+
+.swiper-button-next {
+   top: 82%;
+   right: 0;
+   width: 8%;
+   height: 10%;
+   color: white;
+   background-color: $color-Dark-400;
+   transition: background-color 0.3s ease-in-out;
+
+   .horz-line {
+      margin: 0 1.5rem 0 0;
+      background-color: white;
+   }
+
+   &::after {
+      display: none;
+   }
+
+   &:hover {
+      background-color: $color-btn-primary;
+   }
+}

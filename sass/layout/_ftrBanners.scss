@@ -1,0 +1,86 @@
+@use '../abstracts/helper'as *;
+
+.banners {
+   padding: 0;
+}
+
+.banner-wrapper {
+   line-height: 0;
+   @extend .flexRow-between;
+
+   .banner-item {
+      flex: 1;
+      overflow: hidden;
+      position: relative;
+
+      &::after {
+         content: "";
+         position: absolute;
+         pointer-events: none;
+         border: solid #fff;
+         border-top-width: medium;
+         border-right-width: medium;
+         border-bottom-width: medium;
+         border-left-width: medium;
+         border-width: 0 1px;
+         top: 20px;
+         bottom: 20px;
+         left: 20px;
+         right: 20px;
+         margin: auto;
+         transition: height .6s ease, transform .6s ease;
+      }
+
+      &::before {
+         content: "";
+         position: absolute;
+         pointer-events: none;
+         border: solid #fff;
+         border-top-width: medium;
+         border-right-width: medium;
+         border-bottom-width: medium;
+         border-left-width: medium;
+         border-width: 1px 0;
+         top: 20px;
+         bottom: 20px;
+         left: 20px;
+         right: 20px;
+         margin: auto;
+         z-index: 1;
+         transition: width .6s ease, transform .6s ease;
+      }
+
+      &:hover img {
+         transform: scale(1.1);
+      }
+   }
+
+   img {
+      width: 100%;
+      transform: scale(1);
+      transition: transform 0.6s ease-in;
+   }
+
+   .banner-content {
+      top: 30%;
+      left: 8%;
+      color: white;
+      position: absolute;
+      line-height: initial;
+
+      span {
+         font-size: $fs-h5;
+         letter-spacing: 0.2rem;
+      }
+
+      h2 {
+         font-size: 3rem;
+         font-weight: 400;
+         margin-bottom: 1.2rem;
+      }
+
+      p {
+         margin: 0.6rem 0 4rem;
+      }
+   }
+}
