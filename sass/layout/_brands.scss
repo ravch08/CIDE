@@ -8,15 +8,17 @@
       border-radius: 0.6rem;
       @extend .flexRow-between;
       background-color: white;
+
+      span {
+         content: "";
+         width: 0.15rem;
+         height: 6rem;
+         background-color: grey;
+      }
    }
 
    figure {
       padding: 0 5rem;
-      border-right: 0.2rem solid rgba(0, 0, 0, 0.089);
-
-      &:last-child {
-         border-right: none;
-      }
 
       &:hover img {
          opacity: 1;

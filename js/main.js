@@ -4,6 +4,9 @@ const header = document.querySelector('header');
 const scrollTop = document.querySelector('.scrollTop');
 const sliderSection = document.querySelector('.slider');
 
+const arrivalTabs = document.querySelectorAll('.arrival-tab');
+const arrivalItems = document.querySelectorAll('.product-item');
+
 const fadeIns = document.querySelectorAll('.fade-in');
 
 
@@ -54,13 +57,30 @@ fadeIns.forEach(fadeIn => {
 // ----- Event Listeners  -------------------------------------------------------------------
 
 scrollTop.addEventListener('click', () => {
-
    window.scrollTo({
       top: 0,
       behavior: 'smooth'
    });
 });
 
+arrivalTabs.forEach(arrivalTab => {
+   arrivalTab.addEventListener('click', () => {
+      arrivalTabs.forEach(tab => tab.classList.remove('active'));
+      arrivalTab.classList.add('active');
+
+      let dataFilter = arrivalTab.getAttribute('data-filter');
+
+      arrivalItems.forEach(arrivalItem => {
+         arrivalItem.classList.remove('show');
+         arrivalItem.classList.add('hide');
+
+         if (arrivalItem.getAttribute('data-item') === dataFilter || dataFilter === 'all') {
+            arrivalItem.classList.remove('hide');
+            arrivalItem.classList.add('show');
+         };
+      });
+   });
+});
 
 
 // ----- Swiper  -------------------------------------------------------------------

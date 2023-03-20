@@ -99,6 +99,11 @@
       color: white;
       background-color: $color-btn-primary;
    }
+
+   &.active {
+      color: white;
+      background-color: $color-btn-primary;
+   }
 }
 
 .btn-submit {

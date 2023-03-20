@@ -24,7 +24,9 @@
 
    .arrival-wrapper {
       gap: 3rem;
-      @extend .flexRow-between;
+      display: flex;
+      align-self: start;
+      justify-content: space-between;
    }
 
    .btn-white {
@@ -176,6 +178,14 @@
          }
       }
 
+      &.hide {
+         display: none;
+      }
+
+      &.show {
+         display: block;
+      }
+
       &:hover {
          img {
             transform: scale(1.1);
@@ -208,8 +218,6 @@
          @extend .flexRow-center;
          background-color: white;
          box-shadow: $box-shadow-md;
-
-
 
          &:hover {
             background-color: $color-btn-primary;
